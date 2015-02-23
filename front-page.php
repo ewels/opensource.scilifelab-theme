@@ -1,0 +1,69 @@
+<?php get_header(); ?>
+
+<div class="home-overlay"></div>
+
+<div class="home">
+
+    <header class="text-center">
+        <div class="scilife-logo">
+            <img class="scilife-logo-img" src="<?php echo get_stylesheet_directory_uri(); ?>/img/scilifelab-logo-bp.svg" title="Science for Life Laboratory" alt="SciLifeLab logo" />
+        </div>
+    </header>
+
+    <section>
+        <div class="showcase">
+            <p style="color:#FFFFFF; text-align:center;">Coming soon..</p>
+            <?php if (have_posts()) {
+                while (have_posts()) {
+                    the_post();
+                    // $data = get_post_meta
+                    ?>
+                    <!--
+                    <div class="case-wrapper">
+                        <a href="https://github.com/{{ post.repo }}" alt="See the {{ post.project }} code" class="case-action-wrapper">
+                            <div id="gh-stars-{{ forloop.index0 }}" class="case-action">
+                                <div class="icon-star"></div>
+                            </div>
+                        </a>
+
+                        <a class="case" href="{{ post.url | prepend: site.baseurl }}">
+                            {% if post.icon_bg %}
+                            <div class="case-logo" style="background:{{ post.icon_bg }}">
+                                {% else %}
+                                <div class="case-logo bg-yellow">
+                                    {% endif %}
+                                    {% if post.icon_img %}
+                                    <img class="case-logo-img"
+                                    src="/img/{{ post.icon_img }}"
+                                    width="48" height="48"
+                                    alt="Project image logo">
+                                    {% else %}
+                                    <div class="case-logo-icon {{ post.icon }}"></div>
+                                    {% endif %}
+                                </div>
+                                <div class="case-intro">
+                                    <span class="case-intro-title">{{ post.project }}</span>
+                                    <span class="case-intro-text">{{ post.intro }}</span>
+                                </div>
+                            </a>
+                        </div>
+                    -->
+                        <?php }
+                    } ?>
+                </div>
+            </section>
+
+        </div>
+
+        <script>
+        $(function() {
+            {% for post in site.posts %}
+            $.getJSON('https://api.github.com/repos/{{ post.repo }}', function(data) {
+                $('#gh-stars-{{ forloop.index0 }}').append(data.stargazers_count);
+            });
+            {% endfor %}
+        });
+        </script>
+
+
+        <?php get_footer(); ?>
