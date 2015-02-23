@@ -7,3 +7,19 @@ Version: 1.0
 */
 
 @import url("css/main.css");
+
+
+body.home {
+    background-image: url(img/grid17.png);
+}
+
+.home footer {
+    margin-top:100px;
+}
+.home footer {
+    font-size:0.8em;
+}
+.home footer a {
+    color:#FFFFFF;
+    text-decoration:none;
+}

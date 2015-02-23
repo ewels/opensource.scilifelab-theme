@@ -27,6 +27,6 @@
 
 	<?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class( $class ); ?>>
 
 	<div class="page-content">
