@@ -24,6 +24,13 @@
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/font-entypo/0.1/dev/entypo.css">
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css">
+	<?php if(is_admin_bar_showing()){ ?>
+	<style type="text/css">
+	.back-button{
+		margin-top:35px;
+	}
+	</style>
+	<?php } ?>
 
 	<?php wp_head(); ?>
 </head>
