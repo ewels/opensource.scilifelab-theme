@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <a href="<?php echo home_url(); ?>" class="back-button button">
-	<span class="icon-left-open"></span>  All
+	<span class="icon-left-open"></span>  Home
 </a>
 
 <?php

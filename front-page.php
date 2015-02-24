@@ -11,7 +11,7 @@
     <div class="showcase">
         <?php
         $gh_repos = array();
-        $args = array( 'post_type' => 'projects', 'posts_per_page' => -1 );
+        $args = array( 'post_type' => 'projects', 'posts_per_page' => -1, 'orderby' => 'title', 'order' => 'ASC' );
         $loop = new WP_Query( $args );
         while ( $loop->have_posts() ) : $loop->the_post();
             $data = array();
@@ -24,6 +24,11 @@
                     $gh_repos[get_the_ID()] = trim($url_path, '/');
                 }
             }
+            $new_post = false;
+            $post_age = (date('U') - get_post_time('U'))/(60*60*24); // days
+            if($post_age < 30){
+                $new_post = true;
+            }
             ?>
             <div class="case-wrapper box">
                 <a href="<?php echo $data['wpcf-github-url']; ?>" alt="See the <?php the_title(); ?> code" class="case-action-wrapper">
@@ -33,17 +38,18 @@
                 </a>
 
                 <a class="case" href="<?php the_permalink(); ?>">
-                <div class="case-logo" style="background:<?php echo $data['wpcf-background-colour']; ?>">
-                <?php if(isset($data['wpcf-project-logo'])) { ?>
-                    <img class="case-logo-img" src="<?php echo $data['wpcf-project-logo']; ?>" width="48" height="48" alt="<?php the_title(); ?>">
-                <?php } else if(isset($data['wpcf-project-symbol'])) { ?>
-                    <div class="case-logo-icon <?php echo $data['wpcf-project-symbol']; ?>"></div>
-                <?php } ?>
-                </div>
-                <div class="case-intro">
-                    <span class="case-intro-title"><?php the_title(); ?></span>
-                    <span class="case-intro-text"><?php echo $data['wpcf-project-tagline-short']; ?></span>
-                </div>
+                    <div class="case-logo" style="background:<?php echo $data['wpcf-background-colour']; ?>">
+                    <?php if(isset($data['wpcf-project-logo'])) { ?>
+                        <img class="case-logo-img" src="<?php echo $data['wpcf-project-logo']; ?>" width="48" height="48" alt="<?php the_title(); ?>">
+                    <?php } else if(isset($data['wpcf-project-symbol'])) { ?>
+                        <div class="case-logo-icon <?php echo $data['wpcf-project-symbol']; ?>"></div>
+                    <?php } ?>
+                    </div>
+                    <div class="case-intro">
+                        <span class="case-intro-title"><?php the_title(); ?></span>
+                        <span class="case-intro-text"><?php echo $data['wpcf-project-tagline-short']; ?></span>
+                    </div>
+                    <?php if($new_post){ ?><div class="case-new">New</div><?php } ?>
                 </a>
             </div>
     <?php endwhile; ?>
