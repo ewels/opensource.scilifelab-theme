@@ -10,17 +10,18 @@ if (have_posts()) {
 		the_post();
 		$data = array();
 		foreach(get_post_meta(get_the_ID()) as $key => $var){
-			if(substr($key, 0, 5) == 'wpcf-'){
+			if(substr($key, 0, 5) == 'wpcf-' && strlen($var[0]) > 0){
 				$data[$key] = $var[0];
 			}
 		}
 
-		if ( has_post_thumbnail() ) {
-			$thumbail_id = get_post_thumbnail_id($post->ID);
-			$thumbnail_object = get_post($thumbail_id);
-			?>
+		if ( isset($data['wpcf-project-poster']) ) { ?>
 			<div class="project-poster-wrapper">
-				<div class="project-poster" style="background-image: url(<?php echo $thumbnail_object->guid; ?> );"></div>
+				<div class="project-poster" style="background-image: url(<?php echo $data['wpcf-project-poster']; ?> );">
+					<?php if ( isset($data['wpcf-project-logo-large']) ) { ?>
+						<img src="<?php echo $data['wpcf-project-logo-large']; ?>" alt="<?php the_title(); ?> Logo">
+					<?php } ?>
+				</div>
 			</div>
 		<?php } ?>
 
@@ -28,7 +29,7 @@ if (have_posts()) {
 			<div class="project-body">
 				<?php
 				echo '<h1 class="text-center"><span class="project-title">'.get_the_title().'</span> - '.$data['wpcf-project-tagline-long'].'</h1>';
-				echo wpautop(get_the_content());
+				echo wpautop(apply_filters( 'the_content', get_the_content()));
 
 				echo '<h2 id="contributors">Contributors</h2>';
 				foreach(get_coauthors() as $author){ ?>

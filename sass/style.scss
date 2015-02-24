@@ -12,11 +12,10 @@ Version: 1.0
 @import 'vendor/highlight';
 @import 'mixins';
 
-
-// PLACEHOLDER SELECTORS
 // +--------------------------------------------------------------------
-// |  ios-scrolling: Enable smooth scrolling on iOS devices
+// PLACEHOLDER SELECTORS / HELPER VARIABLES AND FUNCTIONS
 // +--------------------------------------------------------------------
+// ios-scrolling: Enable smooth scrolling on iOS devices
 %ios-scrolling {
   -webkit-overflow-scrolling: touch;
 }
@@ -25,9 +24,12 @@ Version: 1.0
 $font-color: #3e4853;  // dark gray
 $flat-gray-1: #eCf0f1;
 $border-color: #ebeef3;
-$bg-color: #2F80C3;
+$bg-color: #f7f7f7;
+$homepage-bg-color: #2F80C3;
 
-// BASE
+// +--------------------------------------------------------------------
+// BASE STYLES & TYPOGRAPY - ALL PAGES
+// +--------------------------------------------------------------------
 html,
 body {
   height: 100%;
@@ -82,7 +84,8 @@ p {
   font-weight: normal;
 }
 
-code {
+
+pre {
   @extend %code;
 
   // Layout
@@ -93,10 +96,8 @@ code {
   // Style
   color: darken(#206cab, 10%);
   border: 1px solid darken($flat-gray-1, 10%);
-}
 
-pre {
-  @extend %code;
+  // @extend %code;
   @extend %ios-scrolling;
 
   // Required
@@ -116,13 +117,8 @@ pre {
     border: 1px solid darken($flat-gray-1, 10%);
   }
 
-  > code {
-    border: 0;
-    padding: 0;
-    top: auto;
-    font-size: 1.1em;
-    word-wrap: normal;
-  }
+  word-wrap: normal;
+  font-size:0.88em;
 }
 
 %paragraph-block {
@@ -131,7 +127,12 @@ pre {
   margin-right: auto;
 }
 
-// HOME/INDEX
+// +--------------------------------------------------------------------
+// HOME PAGE STRUCTURE & TYPOGRAPY
+// +--------------------------------------------------------------------
+.home {
+    background-color:$homepage-bg-color;
+}
 .home .page-content {
   padding: 2em 0;
 }
@@ -152,8 +153,7 @@ body.home {
     background-image: url(img/grid17.png);
 }
 
-
-
+// Homepage logo
 .scilife-logo-img {
   width: 80%;
   max-width: 30em;
@@ -317,7 +317,11 @@ body.home {
   background: #edbb0f;
 }
 
-// PROJECT
+
+
+// +--------------------------------------------------------------------
+// NON-HOMEPAGE PAGE STRUCTURE & TYPOGRAPY
+// +--------------------------------------------------------------------
 .back-button {
   background-color: #7cbe30;
   display: block;
@@ -382,7 +386,7 @@ body.home {
     }
   }
 
-  > .highlight {
+  .highlight {
     @extend %paragraph-block;
     max-width: 650px;
   }
@@ -399,6 +403,7 @@ body.home {
     }
   }
 }
+
 
 $max-poster-height: 800px;
 .project-poster-wrapper {
@@ -431,8 +436,7 @@ $max-poster-height: 800px;
   color: #2980b9;
 }
 
-// SECTIONS
-// FOOTER
+
 .scilife-footer {
   border-top: 1px solid #dedede;
   background-color: #f7f7f7;

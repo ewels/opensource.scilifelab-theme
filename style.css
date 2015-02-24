@@ -477,7 +477,7 @@ html,
 body {
   height: 100%;
   -webkit-font-smoothing: antialiased;
-  background-color: #2f80c3; }
+  background-color: #f7f7f7; }
   @media screen and (min-width: 500px) {
     html,
     body {
@@ -508,44 +508,41 @@ h1, h2, h3, h4, h5, h6 {
 p {
   line-height: 1.5em; }
 
-code, pre {
+pre {
   background: #f5f7f7;
   font-family: 'Source Code Pro', Consolas, Menlo;
   font-size: .8em;
   font-weight: normal; }
 
-code {
+pre {
   padding: .1em .3em .15em;
   position: relative;
   top: -1px;
   color: #185180;
-  border: 1px solid #cfd9db; }
-
-pre {
+  border: 1px solid #cfd9db;
   overflow-x: auto;
   white-space: pre;
   padding: .5em 1.3em .7em;
   color: rgba(0, 0, 0, 0.7);
   border-top: 1px solid #cfd9db;
   border-bottom: 1px solid #cfd9db;
-  box-shadow: 0 2px 1px -2px #94aab0; }
+  box-shadow: 0 2px 1px -2px #94aab0;
+  word-wrap: normal;
+  font-size: 0.88em; }
   @media screen and (min-width: 600px) {
     pre {
       border: 1px solid #cfd9db; } }
-  pre > code {
-    border: 0;
-    padding: 0;
-    top: auto;
-    font-size: 1.1em;
-    word-wrap: normal; }
 
 .project-body > p,
 .project-body > h1,
 .project-body > h2,
-.project-body > ul, .project-body > .highlight {
+.project-body > ul, .project-body .highlight {
   max-width: 550px;
   margin-left: auto;
   margin-right: auto; }
+
+.home {
+  background-color: #2f80c3; }
 
 .home .page-content {
   padding: 2em 0; }
@@ -784,7 +781,7 @@ body.home {
       .project-body > h2,
       .project-body > ul {
         width: 80%; } }
-  .project-body > .highlight {
+  .project-body .highlight {
     max-width: 650px; }
   .project-body > h1 {
     max-width: 750px; }
