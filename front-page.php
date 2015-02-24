@@ -25,7 +25,7 @@
                 }
             }
             ?>
-            <div class="case-wrapper">
+            <div class="case-wrapper box">
                 <a href="<?php echo $data['wpcf-github-url']; ?>" alt="See the <?php the_title(); ?> code" class="case-action-wrapper">
                     <div id="gh-stars-<?php echo get_the_id(); ?>" class="case-action">
                         <div class="icon-star"></div>
@@ -33,11 +33,11 @@
                 </a>
 
                 <a class="case" href="<?php the_permalink(); ?>">
-                <div class="case-logo bg-yellow" style="background:<?php echo $data['wpcf-background-colour']; ?>">
+                <div class="case-logo" style="background:<?php echo $data['wpcf-background-colour']; ?>">
                 <?php if(isset($data['wpcf-project-logo'])) { ?>
                     <img class="case-logo-img" src="<?php echo $data['wpcf-project-logo']; ?>" width="48" height="48" alt="<?php the_title(); ?>">
-                <?php } else if(isset($data['wpcf-project-icon'])) { ?>
-                    <div class="case-logo-icon <?php echo $data['wpcf-project-icon']; ?>"></div>
+                <?php } else if(isset($data['wpcf-project-symbol'])) { ?>
+                    <div class="case-logo-icon <?php echo $data['wpcf-project-symbol']; ?>"></div>
                 <?php } ?>
                 </div>
                 <div class="case-intro">
@@ -50,6 +50,10 @@
     </div>
 </section>
 
+<nav>
+    <a class="button" href="<?php echo home_url('authors'); ?>" title="Authors">See all project authors</a>
+</nav>
+
 <?php if(!is_user_logged_in()){ ?>
 <footer>
     <p class="text-center"><a href="<?php echo wp_login_url( home_url() ); ?>" title="Login">Log in</a></p>
@@ -59,10 +63,10 @@
 
 
 <script>
-jQuery(function() {
+jQuery(function($) {
     <?php foreach($gh_repos as $id => $repo){ ?>
-    jQuery.getJSON('https://api.github.com/repos/<?php echo $repo; ?>', function(data) {
-        jQuery('#gh-stars-<?php echo $id; ?>').append(data.stargazers_count);
+    $.getJSON('https://api.github.com/repos/<?php echo $repo; ?>', function(data) {
+        $('#gh-stars-<?php echo $id; ?>').append(data.stargazers_count);
     });
     <?php } ?>
 });

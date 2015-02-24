@@ -490,6 +490,35 @@ body {
 .text-center {
   text-align: center; }
 
+dl, dd {
+  margin: 0 0 20px; }
+
+dt, dd {
+  margin: 0; }
+
+dd {
+  padding-bottom: 6px; }
+
+@media (min-width: 768px) {
+  dl dt {
+    float: left;
+    width: 100px;
+    overflow: hidden;
+    clear: left;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+
+  dl dd {
+    margin-left: 120px; } }
+dl dd:before,
+dl dd:after {
+  display: table;
+  content: " "; }
+
+dl dd:after {
+  clear: both; }
+
 *,
 *:before,
 *:after {
@@ -533,16 +562,9 @@ pre {
     pre {
       border: 1px solid #cfd9db; } }
 
-.project-body > p,
-.project-body > h1,
-.project-body > h2,
-.project-body > ul, .project-body .highlight {
-  max-width: 550px;
-  margin-left: auto;
-  margin-right: auto; }
-
 .home {
-  background-color: #2f80c3; }
+  background-color: #2f80c3;
+  background-image: url(img/grid17.png); }
 
 .home .page-content {
   padding: 2em 0; }
@@ -556,9 +578,6 @@ pre {
 .home footer a {
   color: #FFFFFF;
   text-decoration: none; }
-
-body.home {
-  background-image: url(img/grid17.png); }
 
 .scilife-logo-img {
   width: 80%;
@@ -574,6 +593,15 @@ body.home {
       max-width: 35em;
       border-top: 0; } }
 
+.box {
+  background-color: #fff;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24); }
+  @media screen and (min-width: 700px) {
+    .box {
+      border-bottom: 0; } }
+  .box:active {
+    background: #f2f2f2; }
+
 .case-wrapper {
   position: relative;
   display: -webkit-flex;
@@ -584,14 +612,7 @@ body.home {
   display: flex;
   -webkit-justify-content: space-between;
   -moz-justify-content: space-between;
-  justify-content: space-between;
-  background-color: #fff;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24); }
-  @media screen and (min-width: 700px) {
-    .case-wrapper {
-      border-bottom: 0; } }
-  .case-wrapper:active {
-    background: #f2f2f2; }
+  justify-content: space-between; }
 
 .case {
   -webkit-flex-basis: 100%;
@@ -718,24 +739,33 @@ body.home {
   min-height: 48px;
   margin-right: 15px;
   border-radius: 48px;
-  background: #bbb; }
+  background: #bbb;
+  background: #edbb0f; }
 
 .case-logo-icon {
   font-size: 20px;
   line-height: 0;
   color: #fff; }
 
-.bg-yellow {
-  background: #edbb0f; }
+.home nav {
+  margin-top: 2em;
+  text-align: center; }
 
 .back-button {
+  z-index: 1;
+  position: relative; }
+  @media screen and (min-width: 800px) {
+    .back-button {
+      position: fixed;
+      left: 1em;
+      top: 1em; } }
+
+.button {
   background-color: #7cbe30;
   display: block;
   padding: 1em;
   color: #fff;
-  position: relative;
   text-decoration: none;
-  z-index: 1;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -743,51 +773,51 @@ body.home {
   -webkit-transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   -moz-transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
-  .back-button:hover {
+  .button:hover {
     background-color: #89cd3a; }
-  .back-button:active {
+  .button:active {
     background-color: #7cbe30; }
   @media screen and (min-width: 800px) {
-    .back-button {
+    .button {
+      display: inline-block;
       box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.26);
       border-radius: 3px;
-      padding: .5em .7em .5em .5em;
-      left: 1em;
-      position: fixed;
-      top: 1em; }
-      .back-button:hover {
+      padding: .5em .7em .5em .5em; }
+      .button:hover {
         box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2); }
-      .back-button > span {
+      .button > span {
         margin-right: -2px;
         position: relative;
         top: 1px; } }
 
+.post {
+  background-color: #fff; }
+
 .project-body {
   padding: 0 0 2em;
-  background-color: #fff; }
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%; }
   @media screen and (min-width: 500px) {
     .project-body {
-      padding-top: 2em; } }
-  .project-body > p,
-  .project-body > h1,
-  .project-body > h2,
-  .project-body > ul {
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%; }
-    @media screen and (min-width: 500px) {
-      .project-body > p,
-      .project-body > h1,
-      .project-body > h2,
-      .project-body > ul {
-        width: 80%; } }
+      width: 80%;
+      padding-top: 2em;
+      max-width: 550px;
+      margin-left: auto;
+      margin-right: auto; } }
   .project-body .highlight {
-    max-width: 650px; }
-  .project-body > h1 {
-    max-width: 750px; }
-  .project-body > ul {
+    width: 650px; }
+    @media screen and (min-width: 700px) {
+      .project-body .highlight {
+        margin-left: -50px; } }
+  .project-body h1.project-h1 {
+    width: 750px; }
+    @media screen and (min-width: 800px) {
+      .project-body h1.project-h1 {
+        margin-left: -100px; } }
+  .project-body ul {
     padding-left: 2em; }
-    .project-body > ul > li {
+    .project-body ul li {
       margin: .8em 0; }
 
 .project-poster-wrapper {
@@ -828,3 +858,35 @@ body.home {
     .scilife-footer > .subheader a {
       text-decoration: none;
       color: #878787; }
+
+.author_list, .project-body .author_list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+.author_list li {
+  margin: 0 0 1em;
+  padding: 1em; }
+
+.author_list li a {
+  display: block; }
+
+.author_list li .avatar {
+  width: 45px;
+  height: 45px;
+  background-color: #f7f7f7;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  float: left;
+  margin-right: 1em; }
+
+.author_list li .name {
+  line-height: 45px; }
+
+.author_stars {
+  display: none;
+  float: right;
+  margin-top: 10px; }
+  .author_stars:before {
+    content: none; }
