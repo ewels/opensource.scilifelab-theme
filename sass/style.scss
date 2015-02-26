@@ -158,7 +158,7 @@ pre {
 // +--------------------------------------------------------------------
 .home {
     background-color:$homepage-bg-color;
-    background-image: url(img/grid17.png);
+    background-image: url(../img/grid17.png);
 }
 .home .page-content {
   padding: 2em 0;
@@ -338,23 +338,22 @@ pre {
 }
 
 .case-new {
-    color:#FFF;
-    font-size: 0.7em;
-    background-color:#f03f33;
-    display:inline-block;
-    padding: 0.2em;
-    margin:0;
-    position:absolute;
-    top:2.6em;
-    right:2.6em;
-    border-radius: 3px;
+  color: #FFF;
+  font-size: 0.7em;
+  background-color: #f03f33;
+  display: inline-block;
+  padding: 0.2em .4em;
+  margin: 0;
+  position: absolute;
+  top: 2.6em;
+  right: 2.6em;
+  border-radius: 3px;
 }
 
 .home nav {
-    margin-top:2em;
-    text-align:center;
+  margin-top: 2em;
+  text-align: center;
 }
-
 
 
 // +--------------------------------------------------------------------
