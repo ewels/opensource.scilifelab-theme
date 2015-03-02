@@ -1,0 +1,79 @@
+// Showcase Item Component
+
+// Example:
+// <div class="showcase-item">
+//   <div class="showcase-item-icon"></div>
+//   <div class="showcase-item-text">
+//     <div class="showcase-item-text-title"></div>
+//     <div class="showcase-item-text-subtitle"></div>
+//   </div>
+//   <div class="showcase-item-badge"></div>
+// </div>
+
+.showcase-item {
+  @include flex-basis(100%);
+  @include display(flex);
+  @include align-items(center);
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+
+  > :not(:last-child) {
+    margin-right: 1rem;
+  }
+
+  @media screen and (min-width: 400px) {
+    padding: 1rem;
+  }
+
+  @media screen and (min-width: 500px) {
+    padding: 1rem;
+  }
+}
+
+.showcase-item-icon {
+  $size: 48px;
+  @include display(flex);
+  @include align-items(center);
+  @include justify-content(center);
+  @include transform-style(preserve-3d);
+  min-width: $size;
+  min-height: $size;
+  margin-right: 15px;
+  border-radius: $size;
+  background: #bbb;
+  background: #edbb0f; // default background colour = yellow
+}
+
+.showcase-item-text-title {
+  font-size: 1.2em;
+  color: #206cab;
+
+  @media screen and (min-width: 500px) {
+    font-size: 1.35em;
+  }
+
+  @media screen and (min-width: 700px) {
+    font-size: 1em;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+}
+
+.showcase-item-text-subtitle {
+  display: block;
+  font-size: .7em;
+  color: #525f6b;
+
+  @media screen and (min-width: 500px) {
+    font-size: .85em;
+  }
+
+  @media screen and (min-width: 700px) {
+    font-size: .9em;
+    display: inline;
+  }
+}
+
+.showcase-item-badge {}

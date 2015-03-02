@@ -35,20 +35,22 @@
                     </div>
                 </a>
 
-                <a class="case" href="<?php the_permalink(); ?>">
-                    <div class="case-logo" style="background:<?php echo $data['wpcf-background-colour']; ?>">
-                    <?php if(isset($data['wpcf-project-logo'])) { ?>
-                        <img class="case-logo-img" src="<?php echo $data['wpcf-project-logo']; ?>" width="48" height="48" alt="<?php the_title(); ?>">
-                    <?php } else if(isset($data['wpcf-project-symbol'])) { ?>
-                        <div class="case-logo-icon <?php echo $data['wpcf-project-symbol']; ?>"></div>
-                    <?php } ?>
+                <a class="showcase-item" href="<?php the_permalink(); ?>">
+                    <div class="showcase-item-icon" style="background:<?php echo $data['wpcf-background-colour']; ?>">
+                        <?php if(isset($data['wpcf-project-logo'])) { ?>
+                            <img class="case-logo-img" src="<?php echo $data['wpcf-project-logo']; ?>" width="48" height="48" alt="<?php the_title(); ?>">
+                        <?php } else if(isset($data['wpcf-project-symbol'])) { ?>
+                            <div class="case-logo-icon <?php echo $data['wpcf-project-symbol']; ?>"></div>
+                        <?php } ?>
                     </div>
-                    <div class="case-intro">
-                        <span class="case-intro-title"><?php the_title(); ?></span>
-                        <span class="case-intro-text"><?php echo $data['wpcf-project-tagline-short']; ?></span>
+                    <div class="showcase-item-text">
+                        <span class="showcase-item-text-title"><?php the_title(); ?></span>
+                        <span class="showcase-item-text-subtitle"><?php echo $data['wpcf-project-tagline-short']; ?></span>
                     </div>
                     <?php if($new_post){ ?>
-                        <div class="badge">New</div>
+                        <div class="showcase-item-badge">
+                            <div class="badge">New</div>
+                        </div>
                     <?php } ?>
                 </a>
             </div>
@@ -56,7 +58,7 @@
     </div>
 </section>
 
-<nav>
+<nav class="home-nav">
     <a class="button" href="<?php echo home_url('authors'); ?>" title="Authors">See all developers</a>
 
     <?php if(!is_user_logged_in()){ ?>
