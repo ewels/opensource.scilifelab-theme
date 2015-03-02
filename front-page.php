@@ -58,13 +58,11 @@
 
 <nav>
     <a class="button" href="<?php echo home_url('authors'); ?>" title="Authors">See all developers</a>
-</nav>
 
-<?php if(!is_user_logged_in()){ ?>
-<footer class="footer">
-    <a href="<?php echo wp_login_url( home_url() ); ?>" title="Login">Log in</a>
-</footer>
-<?php } ?>
+    <?php if(!is_user_logged_in()){ ?>
+        <a class="button" href="<?php echo wp_login_url( home_url() ); ?>" title="Login">Log in</a>
+    <?php } ?>
+</nav>
 
 
 

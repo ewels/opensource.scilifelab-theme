@@ -626,18 +626,9 @@ pre {
 
 .home {
   height: initial;
+  min-height: 100%;
   background-color: #2F80C3;
   background-image: url(img/grid17.png); }
-
-.home .page-content {
-  padding: 2em 0; }
-
-.home footer {
-  font-size: 0.8em; }
-
-.home footer a {
-  color: #FFFFFF;
-  text-decoration: none; }
 
 .showcase {
   margin: 1em auto 0;

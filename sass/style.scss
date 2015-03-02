@@ -14,7 +14,6 @@ Version: 1.0
 @import 'vendor/highlight';  // code highlighting
 
 // Variables
-@import 'colors';
 
 // Mixins
 @import 'mixins';
@@ -165,18 +164,9 @@ pre {
 // +--------------------------------------------------------------------
 .home {
   height: initial;
-  background-color:$homepage-bg-color;
+  min-height: 100%;
+  background-color: $homepage-bg-color;
   background-image: url(img/grid17.png);
-}
-.home .page-content {
-  padding: 2em 0;
-}
-.home footer {
-    font-size:0.8em;
-}
-.home footer a {
-    color:#FFFFFF;
-    text-decoration:none;
 }
 
 .showcase {
