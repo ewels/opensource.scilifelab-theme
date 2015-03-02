@@ -1,0 +1,24 @@
+// Footer component
+
+.footer {
+  text-align: center;
+  padding: 2rem 0 2.5rem;
+
+  &.mod-solid {
+    background-color: hsla(0, 0%, 97%, 1);
+    border-top: 1px solid hsla(0, 0%, 87%, 1);
+  }
+}
+
+.footer-logo {
+  max-width: 11rem;
+}
+
+.footer-subheader {
+  font-size: .9rem;
+}
+
+.footer-subheader-link {
+  text-decoration: none;
+  color: hsla(0, 0%, 53%, 1);
+}

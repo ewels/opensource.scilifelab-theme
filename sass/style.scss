@@ -28,6 +28,7 @@ Version: 1.0
 
 // Regions
 @import 'components/header';
+@import 'components/footer';
 
 // +--------------------------------------------------------------------
 // PLACEHOLDER SELECTORS / HELPER VARIABLES AND FUNCTIONS
@@ -50,6 +51,7 @@ $homepage-bg-color: #2F80C3;
 html,
 body {
   height: 100%;
+
   // Render fonts thinner
   -webkit-font-smoothing: antialiased;
 
@@ -65,13 +67,13 @@ body {
 }
 
 dl, dd {
-    margin:0 0 20px;
+    margin: 0 0 20px;
 }
 dt, dd {
-    margin:0;
+    margin: 0;
 }
 dd {
-    padding-bottom:6px;
+    padding-bottom: 6px;
 }
 @media (min-width: 768px) {
   dl dt {
@@ -162,15 +164,12 @@ pre {
 // HOME PAGE STRUCTURE & TYPOGRAPY
 // +--------------------------------------------------------------------
 .home {
-    background-color:$homepage-bg-color;
-    background-image: url(img/grid17.png);
+  height: initial;
+  background-color:$homepage-bg-color;
+  background-image: url(img/grid17.png);
 }
 .home .page-content {
   padding: 2em 0;
-}
-// Homepage login link footer
-.home footer {
-    margin-top:100px;
 }
 .home footer {
     font-size:0.8em;
@@ -420,28 +419,6 @@ $max-poster-height: 800px;
 .project-title {
   color: #2980b9;
 }
-
-
-.scilife-footer {
-  border-top: 1px solid #dedede;
-  background-color: #f7f7f7;
-  padding: 2em 0 2.5em;
-  text-align: center;
-
-  > .scilife-logo > .scilife-logo-img {
-    max-width: 11em;
-  }
-
-  > .subheader {
-    font-size: 12px;
-
-    a {
-      text-decoration: none;
-      color: #878787;
-    }
-  }
-}
-
 
 // +--------------------------------------------------------------------
 // AUTHOR PAGE STRUCTURE & TYPOGRAPY

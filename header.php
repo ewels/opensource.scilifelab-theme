@@ -27,7 +27,7 @@
 	<?php if(is_admin_bar_showing()){ ?>
 	<style type="text/css">
 	.back-button{
-		margin-top:35px;
+		margin-top: 35px;
 	}
 	</style>
 	<?php } ?>
@@ -35,5 +35,3 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class( $class ); ?>>
-
-	<div class="page-content">

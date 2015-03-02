@@ -61,8 +61,8 @@
 </nav>
 
 <?php if(!is_user_logged_in()){ ?>
-<footer>
-    <p class="text-center"><a href="<?php echo wp_login_url( home_url() ); ?>" title="Login">Log in</a></p>
+<footer class="footer">
+    <a href="<?php echo wp_login_url( home_url() ); ?>" title="Login">Log in</a>
 </footer>
 <?php } ?>
 

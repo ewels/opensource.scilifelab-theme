@@ -526,6 +526,23 @@ table {
   max-width: 30rem;
   width: 80%; }
 
+.footer {
+  text-align: center;
+  padding: 2rem 0 2.5rem; }
+  .footer.mod-solid {
+    background-color: #f7f7f7;
+    border-top: 1px solid #dedede; }
+
+.footer-logo {
+  max-width: 11rem; }
+
+.footer-subheader {
+  font-size: .9rem; }
+
+.footer-subheader-link {
+  text-decoration: none;
+  color: #878787; }
+
 pre {
   -webkit-overflow-scrolling: touch; }
 
@@ -608,14 +625,12 @@ pre {
       border: 1px solid #cfd9db; } }
 
 .home {
+  height: initial;
   background-color: #2F80C3;
   background-image: url(img/grid17.png); }
 
 .home .page-content {
   padding: 2em 0; }
-
-.home footer {
-  margin-top: 100px; }
 
 .home footer {
   font-size: 0.8em; }
@@ -848,19 +863,6 @@ pre {
 
 .project-title {
   color: #2980b9; }
-
-.scilife-footer {
-  border-top: 1px solid #dedede;
-  background-color: #f7f7f7;
-  padding: 2em 0 2.5em;
-  text-align: center; }
-  .scilife-footer > .scilife-logo > .scilife-logo-img {
-    max-width: 11em; }
-  .scilife-footer > .subheader {
-    font-size: 12px; }
-    .scilife-footer > .subheader a {
-      text-decoration: none;
-      color: #878787; }
 
 .author_list, .project-body .author_list {
   list-style-type: none;
