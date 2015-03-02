@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<a href="<?php echo home_url(); ?>" class="back-button button">
+<a href="<?php echo home_url(); ?>" class="button mod-fab">
 	<span class="icon-left-open"></span>  Home
 </a>
 
