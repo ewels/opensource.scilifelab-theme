@@ -49,7 +49,9 @@
                         <span class="case-intro-title"><?php the_title(); ?></span>
                         <span class="case-intro-text"><?php echo $data['wpcf-project-tagline-short']; ?></span>
                     </div>
-                    <?php if($new_post){ ?><div class="case-new">New</div><?php } ?>
+                    <?php if($new_post){ ?>
+                        <div class="badge">New</div>
+                    <?php } ?>
                 </a>
             </div>
     <?php endwhile; ?>

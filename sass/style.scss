@@ -6,11 +6,23 @@ Description: The 2015 theme for the SciLifeLab open source mini site.
 Version: 1.0
 */
 
-@import 'vendor/normalize';
+@charset 'UTF-8';
+
 @import 'bourbon/bourbon';
+@import 'vendor/normalize';
 @import 'vendor/flex-box';
-@import 'vendor/highlight';
+@import 'vendor/highlight';  // code highlighting
+
+// Variables
+@import 'colors';
+
+// Mixins
 @import 'mixins';
+
+// Utils
+
+// Components
+@import 'components/badge';
 
 // +--------------------------------------------------------------------
 // PLACEHOLDER SELECTORS / HELPER VARIABLES AND FUNCTIONS
@@ -220,6 +232,10 @@ pre {
   position: relative;
   text-decoration: none;
 
+  > :not(:last-child) {
+    margin-right: 1rem;
+  }
+
   @media screen and (min-width: 400px) {
     padding: 1em;
   }
@@ -335,19 +351,6 @@ pre {
   font-size: 20px;
   line-height: 0;
   color: #fff;
-}
-
-.case-new {
-  color: #FFF;
-  font-size: 0.7em;
-  background-color: #f03f33;
-  display: inline-block;
-  padding: 0.2em .4em;
-  margin: 0;
-  position: absolute;
-  top: 2.6em;
-  right: 2.6em;
-  border-radius: 3px;
 }
 
 .home nav {

@@ -1,0 +1,13 @@
+// Small badge component
+// Defines a red badge with white text.
+
+$badge-background: hsla(4, 86%, 57%, 1);
+$badge-color: hsla(360, 100%, 100%, 1);
+
+.badge {
+  background: $badge-background;
+  border-radius: 3px;
+  color: $badge-color;
+  font-size: .7rem;
+  padding: .2rem .4rem;
+}
