@@ -470,6 +470,13 @@ table {
  * @font-face mixin
  * @include font-face('family', '../fonts/', 'myfontname');
  */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
 .badge {
   background: #f04033;
   border-radius: 3px;
@@ -510,6 +517,14 @@ table {
         left: 1em;
         position: fixed;
         top: 1em; } }
+
+.header {
+  text-align: center; }
+
+.header-logo {
+  margin-left: -1rem;
+  max-width: 30rem;
+  width: 80%; }
 
 pre {
   -webkit-overflow-scrolling: touch; }
@@ -559,13 +574,6 @@ dl dd:after {
 
 dl dd:after {
   clear: both; }
-
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
 
 body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
@@ -619,11 +627,6 @@ pre {
 .home footer a {
   color: #FFFFFF;
   text-decoration: none; }
-
-.scilife-logo-img {
-  width: 80%;
-  max-width: 30em;
-  margin-left: -1em; }
 
 .showcase {
   margin: 1em auto 0;

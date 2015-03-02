@@ -1,10 +1,8 @@
 <?php get_header(); ?>
 
 
-<header class="text-center">
-    <div class="scilife-logo">
-        <img class="scilife-logo-img" src="<?php echo get_stylesheet_directory_uri(); ?>/img/scilifelab-logo-bp.svg" title="Science for Life Laboratory" alt="SciLifeLab logo" />
-    </div>
+<header class="header">
+    <img class="header-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/img/scilifelab-logo-bp.svg" title="Science for Life Laboratory" alt="SciLifeLab logo" />
 </header>
 
 <section>

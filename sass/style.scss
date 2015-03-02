@@ -20,10 +20,14 @@ Version: 1.0
 @import 'mixins';
 
 // Utils
+@import 'basic';
 
 // Components
 @import 'components/badge';
 @import 'components/button';
+
+// Regions
+@import 'components/header';
 
 // +--------------------------------------------------------------------
 // PLACEHOLDER SELECTORS / HELPER VARIABLES AND FUNCTIONS
@@ -95,13 +99,6 @@ dl dd:after {
 }
 dl dd:after {
     clear:both;
-}
-
-// Include padding & border in the size of elements
-*,
-*:before,
-*:after {
-  @include box-sizing(border-box);
 }
 
 // TYPOGRAPHY
@@ -186,13 +183,6 @@ pre {
 .home footer a {
     color:#FFFFFF;
     text-decoration:none;
-}
-
-// Homepage logo
-.scilife-logo-img {
-  width: 80%;
-  max-width: 30em;
-  margin-left: -1em;
 }
 
 .showcase {

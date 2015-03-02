@@ -1,0 +1,6 @@
+// Include padding & border in the size of elements
+*,
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
