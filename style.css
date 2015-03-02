@@ -501,7 +501,7 @@ table {
     background-color: #89ce3b; }
   .button:active {
     background-color: #7dc030; }
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 700px) {
     .button {
       border-radius: 3px;
       box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.26);
@@ -512,7 +512,7 @@ table {
   .button.mod-fab {
     position: relative;
     z-index: 1; }
-    @media screen and (min-width: 800px) {
+    @media screen and (min-width: 700px) {
       .button.mod-fab {
         left: 1em;
         position: fixed;
@@ -538,10 +538,6 @@ body {
     html,
     body {
       font-size: 105%; } }
-
-.page-content,
-.project-wrapper {
-  height: 100%; }
 
 .text-center {
   text-align: center; }
