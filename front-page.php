@@ -28,7 +28,7 @@
                 $new_post = true;
             }
             ?>
-            <div class="case-wrapper box">
+            <div class="showcase-wrapper">
                 <a href="<?php echo $data['wpcf-github-url']; ?>" alt="See the <?php the_title(); ?> code" class="case-action-wrapper">
                     <div id="gh-stars-<?php echo get_the_id(); ?>" class="case-action">
                         <div class="icon-star"></div>

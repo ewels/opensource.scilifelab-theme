@@ -1,0 +1,61 @@
+// TYPOGRAPHY
+body {
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  color: $font-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Baskerville, Georgia, serif;
+  font-weight: normal;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+// CODE BLOCKS
+
+%code {
+  // Style
+  background: lighten($flat-gray-1, 3%);
+  font-family: 'Source Code Pro', Consolas, Menlo;
+  font-size: .8em;
+  font-weight: normal;
+}
+
+
+pre {
+  @extend %code;
+
+  // Layout
+  padding: .1em .3em .15em;
+  position: relative;
+  top: -1px;
+
+  // Style
+  color: darken(#206cab, 10%);
+  border: 1px solid darken($flat-gray-1, 10%);
+
+  // @extend %code;
+  @extend %ios-scrolling;
+
+  // Required
+  overflow-x: auto;
+  white-space: pre;
+
+  // Layout
+  padding: .5em 1.3em .7em;
+
+  // Style
+  color: rgba(#000, .7);
+  border-top: 1px solid darken($flat-gray-1, 10%);
+  border-bottom: 1px solid darken($flat-gray-1, 10%);
+  box-shadow: 0 2px 1px -2px darken($flat-gray-1, 30%);
+
+  @media screen and (min-width: 600px) {
+    border: 1px solid darken($flat-gray-1, 10%);
+  }
+
+  word-wrap: normal;
+  font-size:0.88em;
+}

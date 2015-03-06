@@ -1,0 +1,28 @@
+.showcase {
+  margin: 1em auto 0;
+  position: relative;
+
+  @media screen and (min-width: 700px) {
+    max-width: 35em;
+    border-top: 0;
+  }
+}
+
+.showcase-wrapper {
+  position: relative;
+  @include display(flex);
+  @include display(flex);
+  @include justify-content(space-between);
+
+  background-color: #fff;
+  box-shadow: 0 0 2px rgba(#000, .12),
+              0 2px 4px rgba(#000, .24);
+
+  @media screen and (min-width: 700px) {
+    border-bottom: 0;
+  }
+
+  &:active {
+    background: darken(#fff, 5%);
+  }
+}

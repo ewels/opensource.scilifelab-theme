@@ -32,7 +32,7 @@ if (have_posts()) {
 				echo wpautop(apply_filters( 'the_content', get_the_content()));
 
 				echo '<h2 id="contributors">Contributors</h2>';
-			    echo '<ul id="contributors_list" class="author_list">';
+			  echo '<ul id="contributors_list" class="showcase">';
 				foreach(get_coauthors() as $author){
 					$aid = get_the_author_meta( 'ID' );
 			        $ghid = '';
@@ -40,11 +40,10 @@ if (have_posts()) {
 			        if(isset($gh_raw[1])){
 			            $ghid = 'data-ghid="'.$gh_raw[1].'"';
 			        }
-			        echo '<li id="author_'.get_the_author_meta( 'user_login' ).'" class="box no_avatar" '.$ghid.'>';
-			        echo '<a href="'.get_author_posts_url($aid).'">';
-			        echo '<div class="avatar"></div>';
-			        echo '<span class="name">'.get_the_author_meta( 'display_name' ).'</span>';
-			        echo '</a></li>';
+			        echo '<li id="author_'.get_the_author_meta( 'user_login' ).'" class="showcase-wrapper no_avatar" '.$ghid.'>';
+			        echo '<div class="showcase-item"><div class="showcase-item-icon"></div>';
+			        echo '<div class="showcase-item-text"><a href="'.get_author_posts_url($aid).'"><div class="showcase-item-text-title">'.get_the_author_meta( 'display_name' ).'</div></a></div></div>';
+			        echo '</li>';
 				}
 				echo '</ul>';
 				echo wpautop($data['wpcf-contributors-custom']);
@@ -66,16 +65,18 @@ if (have_posts()) {
 <script>
 jQuery(function($) {
     // Get avatars
-    $('.author_list li').each(function(){
-        var no_avatar = $(this).hasClass('no_avatar');
-        if(no_avatar){
-            var username = $(this).attr('id').substring(7);
-            $.getJSON('https://api.github.com/users/'+username, function(data) {
-                if(no_avatar && data.avatar_url !== undefined && data.avatar_url.length > 0){
-                    $('#author_'+username+' .avatar').css('background-image', 'url("'+data.avatar_url+'")');
-                }
-            });
-        }
+    $('.showcase-wrapper').each(function(){
+      var no_avatar = $(this).hasClass('no_avatar');
+
+      if (no_avatar) {
+        var username = $(this).attr('id').substring(7);
+
+        $.getJSON('https://api.github.com/users/'+username, function(data) {
+          if(no_avatar && data.avatar_url !== undefined && data.avatar_url.length > 0){
+              $('#author_'+username+' .showcase-item-icon').css('background-image', 'url("'+data.avatar_url+'")');
+            }
+        });
+      }
     });
 });
 </script>

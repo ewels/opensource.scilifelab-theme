@@ -42,13 +42,14 @@
   min-height: $size;
   margin-right: 15px;
   border-radius: $size;
-  background: #bbb;
-  background: #edbb0f; // default background colour = yellow
+  background-color: #edbb0f; // default background colour = yellow
+  background-size: $size;
 }
 
 .showcase-item-text-title {
   font-size: 1.2em;
   color: #206cab;
+  text-decoration: none;
 
   @media screen and (min-width: 500px) {
     font-size: 1.35em;
