@@ -158,3 +158,11 @@
        url($font-url + '/' + $font-name + '.svg#' + $font-name) format('svg');
   }
 }
+
+// +--------------------------------------------------------------------
+// PLACEHOLDER SELECTORS / HELPER VARIABLES AND FUNCTIONS
+// +--------------------------------------------------------------------
+// ios-scrolling: Enable smooth scrolling on iOS devices
+%ios-scrolling {
+  -webkit-overflow-scrolling: touch;
+}

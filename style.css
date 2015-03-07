@@ -470,6 +470,9 @@ table {
  * @font-face mixin
  * @include font-face('family', '../fonts/', 'myfontname');
  */
+pre {
+  -webkit-overflow-scrolling: touch; }
+
 *,
 *:before,
 *:after {
@@ -676,9 +679,6 @@ pre {
   text-decoration: none;
   color: #878787; }
 
-pre {
-  -webkit-overflow-scrolling: touch; }
-
 html,
 body {
   height: 100%;
@@ -861,37 +861,5 @@ dl dd:after {
 
 .project-title {
   color: #2980b9; }
-
-.author_list, .project-body .author_list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0; }
-
-.author_list li {
-  margin: 0 0 1em;
-  padding: 1em; }
-
-.author_list li a {
-  display: block; }
-
-.author_list li .avatar {
-  width: 45px;
-  height: 45px;
-  background-color: #f7f7f7;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  float: left;
-  margin-right: 1em; }
-
-.author_list li .name {
-  line-height: 45px; }
-
-.author_stars {
-  display: none;
-  float: right;
-  margin-top: 10px; }
-  .author_stars:before {
-    content: none; }
 
 /*# sourceMappingURL=style.css.map */

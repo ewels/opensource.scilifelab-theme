@@ -34,14 +34,6 @@ Version: 1.0
 @import 'regions/footer';
 
 // +--------------------------------------------------------------------
-// PLACEHOLDER SELECTORS / HELPER VARIABLES AND FUNCTIONS
-// +--------------------------------------------------------------------
-// ios-scrolling: Enable smooth scrolling on iOS devices
-%ios-scrolling {
-  -webkit-overflow-scrolling: touch;
-}
-
-// +--------------------------------------------------------------------
 // BASE STYLES & TYPOGRAPY - ALL PAGES
 // +--------------------------------------------------------------------
 html,
@@ -266,42 +258,4 @@ $max-poster-height: 800px;
 
 .project-title {
   color: #2980b9;
-}
-
-// +--------------------------------------------------------------------
-// AUTHOR PAGE STRUCTURE & TYPOGRAPY
-// +--------------------------------------------------------------------
-.author_list, .project-body .author_list {
-    list-style-type:none;
-    margin:0;
-    padding:0;
-}
-.author_list li {
-    margin:0 0 1em;
-    padding:1em;
-}
-.author_list li a {
-    display:block;
-}
-.author_list li .avatar {
-    width:45px;
-    height:45px;
-    background-color: $bg-color;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-
-    float:left;
-    margin-right: 1em;
-}
-.author_list li .name {
-    line-height:45px;
-}
-.author_stars {
-    display:none;
-    float:right;
-    margin-top:10px;
-    &:before {
-        content:none;
-    }
 }
