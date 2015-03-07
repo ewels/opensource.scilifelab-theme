@@ -42,7 +42,7 @@
   min-height: $size;
   margin-right: 15px;
   border-radius: $size;
-  background-color: #edbb0f; // default background colour = yellow
+  background-color: rgba(#000, .1); // default background colour = gray
   background-size: $size;
 }
 
