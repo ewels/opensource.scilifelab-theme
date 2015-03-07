@@ -18,7 +18,7 @@
     }
 
     // List website users
-    echo '<ul id="user_list" class="author_list">';
+    echo '<div id="user_list" class="showcase">';
     $wp_users = get_users( array('orderby' => 'display_name') );
     foreach ($wp_users as $user){
         $ghid = '';
@@ -26,47 +26,60 @@
         if(isset($gh_raw[1])){
             $ghid = 'data-ghid="'.$gh_raw[1].'"';
         }
-        echo '<li id="author_'.$user->data->user_login.'" class="box no_avatar" '.$ghid.'>';
-        echo '<a href="'.get_author_posts_url($user->ID).'">';
-        echo '<div class="avatar"></div>';
-        echo '<span class="name">'.$user->data->display_name.'</span>';
-        echo '</a></li>';
+        echo '<div id="author_'.$user->data->user_login.'" class="showcase-wrapper no_avatar" '.$ghid.'>';
+            echo '<div class="showcase-item">';
+                echo '<div class="showcase-item-icon"></div>';
+                echo '<div class="showcase-item-text">';
+                    echo '<a class="showcase-item-text-title" href="'.get_author_posts_url($user->ID).'">';
+                        echo $user->data->display_name;
+                    echo '</a>';
+                echo '</div>';
+            echo '</div>';
+        echo '</div>';
     }
-    echo '</ul>';
+    echo '</div>';
     ?>
 
     <h1>Other SciLifeLab Developers</h1>
-    <ul id="github_users" class="author_list"></ul>
+    <div id="github_users" class="showcase"></div>
 </div>
 
 <script>
 jQuery(function($) {
-    // Find any missing organisation members
-    $.getJSON('https://api.github.com/orgs/SciLifeLab/members', function(data) {
-        $.each(data, function(key, usr){
-            if ($('.author_list li[data-ghid^="'+usr.id+'"]').length == 0) {
-                $('<li id="author_'+usr.login+'" class="box no_name" data-ghid="'+usr.id+'"><a href="'+usr.html_url+'"><div class="avatar" style="background-image: url(\''+usr.avatar_url+'\');"></div><span class="name">'+usr.login+'</span></a></li>').appendTo('#github_users');
+    var scilifelabMembers = 'https://api.github.com/orgs/SciLifeLab/members';
+    var jqxhr = $.getJSON(scilifelabMembers, function(data) {
+        // Find any missing organisation members
+        $.each(data, function(key, usr) {
+            // only include unless project author (already in "user_list")
+            if ($('.showcase-wrapper[data-ghid^="'+usr.id+'"]').length == 0) {
+                $('<div id="author_' + usr.login + '" class="showcase-wrapper no_name" data-ghid="'+usr.id+'"><div class="showcase-item"><div class="showcase-item-icon" style="background-image: url(\''+usr.avatar_url+'\');"></div><div class="showcase-item-text"><a class="showcase-item-text-title" href="' + usr.html_url + '">' + usr.login + '</a></div></div></div>').appendTo('#github_users');
             }
         });
 
-
         // Get avatars and real names (if missing)
-        $('.author_list li').each(function(){
+        $('.showcase-wrapper').each(function() {
             var no_avatar = $(this).hasClass('no_avatar');
             var no_name = $(this).hasClass('no_name');
-            if(no_avatar || no_name){
+            if (no_avatar || no_name) {
                 var username = $(this).attr('id').substring(7);
                 $.getJSON('https://api.github.com/users/'+username, function(data) {
                     if(no_avatar && data.avatar_url !== undefined && data.avatar_url.length > 0){
-                        $('#author_'+username+' .avatar').css('background-image', 'url("'+data.avatar_url+'")');
+                        $('#author_'+username+' .showcase-item-icon').css('background-image', 'url("'+data.avatar_url+'")');
                     }
                     if(no_name && data.name !== undefined && data.name.length > 0){
-                        $('#author_'+username+' .name').text(data.name);
+                        $('#author_'+username+' .showcase-item-text-title').text(data.name);
                     }
                 });
             }
         });
-    });
+
+    })
+        .fail(function() {
+            $('#github_users').html('<p class="error-message">Oops, couldn\'t communicate with the GitHub API.</p>');
+        })
+        .always(function() {
+            console.log( "complete" );
+        });
 });
 </script>
 
