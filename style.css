@@ -731,15 +731,6 @@ dl dd:after {
   margin-top: 2em;
   text-align: center; }
 
-.box {
-  background-color: #fff;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24); }
-  @media screen and (min-width: 700px) {
-    .box {
-      border-bottom: 0; } }
-  .box:active {
-    background: #f2f2f2; }
-
 .case-action-wrapper {
   display: none;
   text-decoration: none;

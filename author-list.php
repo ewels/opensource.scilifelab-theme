@@ -18,7 +18,7 @@
     }
 
     // List website users
-    echo '<div id="user_list" class="showcase">';
+    echo '<div id="user-list" class="showcase">';
     $wp_users = get_users( array('orderby' => 'display_name') );
     foreach ($wp_users as $user){
         $ghid = '';
@@ -26,7 +26,7 @@
         if(isset($gh_raw[1])){
             $ghid = 'data-ghid="'.$gh_raw[1].'"';
         }
-        echo '<div id="author_'.$user->data->user_login.'" class="showcase-wrapper no_avatar" '.$ghid.'>';
+        echo '<div id="author_'.$user->data->user_login.'" class="showcase-wrapper no-avatar" '.$ghid.'>';
             echo '<div class="showcase-item">';
                 echo '<div class="showcase-item-icon"></div>';
                 echo '<div class="showcase-item-text">';
@@ -41,7 +41,7 @@
     ?>
 
     <h1>Other SciLifeLab Developers</h1>
-    <div id="github_users" class="showcase"></div>
+    <div id="github-users" class="showcase"></div>
 </div>
 
 <script>
@@ -50,16 +50,16 @@ jQuery(function($) {
     var jqxhr = $.getJSON(scilifelabMembers, function(data) {
         // Find any missing organisation members
         $.each(data, function(key, usr) {
-            // only include unless project author (already in "user_list")
+            // only include unless project author (already in "user-list")
             if ($('.showcase-wrapper[data-ghid^="'+usr.id+'"]').length == 0) {
-                $('<div id="author_' + usr.login + '" class="showcase-wrapper no_name" data-ghid="'+usr.id+'"><div class="showcase-item"><div class="showcase-item-icon" style="background-image: url(\''+usr.avatar_url+'\');"></div><div class="showcase-item-text"><a class="showcase-item-text-title" href="' + usr.html_url + '">' + usr.login + '</a></div></div></div>').appendTo('#github_users');
+                $('<div id="author_' + usr.login + '" class="showcase-wrapper no-name" data-ghid="'+usr.id+'"><div class="showcase-item"><div class="showcase-item-icon" style="background-image: url(\''+usr.avatar_url+'\');"></div><div class="showcase-item-text"><a class="showcase-item-text-title" href="' + usr.html_url + '">' + usr.login + '</a></div></div></div>').appendTo('#github-users');
             }
         });
 
         // Get avatars and real names (if missing)
         $('.showcase-wrapper').each(function() {
-            var no_avatar = $(this).hasClass('no_avatar');
-            var no_name = $(this).hasClass('no_name');
+            var no_avatar = $(this).hasClass('no-avatar');
+            var no_name = $(this).hasClass('no-name');
             if (no_avatar || no_name) {
                 var username = $(this).attr('id').substring(7);
                 $.getJSON('https://api.github.com/users/'+username, function(data) {
@@ -75,7 +75,7 @@ jQuery(function($) {
 
     })
         .fail(function() {
-            $('#github_users').html('<p class="error-message">Oops, couldn\'t communicate with the GitHub API.</p>');
+            $('#github-users').html('<p class="error-message">Oops, couldn\'t communicate with the GitHub API.</p>');
         })
         .always(function() {
             console.log( "complete" );

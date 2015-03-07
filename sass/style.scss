@@ -107,19 +107,7 @@ dl dd:after {
   text-align: center;
 }
 
-.box {
-  background-color: #fff;
-  box-shadow: 0 0 2px rgba(#000, .12), 0 2px 4px rgba(#000, .24);
-  @media screen and (min-width: 700px) {
-    border-bottom: 0;
-  }
-
-  &:active {
-    background: darken(#fff, 5%);
-  }
-}
-
- .case-action-wrapper {
+.case-action-wrapper {
   display: none;
   text-decoration: none;
   position: relative;

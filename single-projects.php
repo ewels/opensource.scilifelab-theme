@@ -40,7 +40,7 @@ if (have_posts()) {
 			        if(isset($gh_raw[1])){
 			            $ghid = 'data-ghid="'.$gh_raw[1].'"';
 			        }
-			        echo '<div id="author_'.get_the_author_meta( 'user_login' ).'" class="showcase-wrapper no_avatar" '.$ghid.'>';
+			        echo '<div id="author_'.get_the_author_meta( 'user_login' ).'" class="showcase-wrapper no-avatar" '.$ghid.'>';
 			        echo '<div class="showcase-item"><div class="showcase-item-icon"></div>';
 			        echo '<div class="showcase-item-text"><a class="showcase-item-text-title" href="'.get_author_posts_url($aid).'">'.get_the_author_meta( 'display_name' ).'</a></div></div>';
 			        echo '</div>';
@@ -66,7 +66,7 @@ if (have_posts()) {
 jQuery(function($) {
     // Get avatars
     $('.showcase-wrapper').each(function(){
-      var no_avatar = $(this).hasClass('no_avatar');
+      var no_avatar = $(this).hasClass('no-avatar');
 
       if (no_avatar) {
         var username = $(this).attr('id').substring(7);
