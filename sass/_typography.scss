@@ -59,3 +59,41 @@ pre {
   word-wrap: normal;
   font-size:0.88em;
 }
+
+dl, dd {
+  margin: 0 0 20px;
+}
+
+dt, dd {
+  margin: 0;
+}
+
+dd {
+  padding-bottom: 6px;
+}
+
+@media (min-width: 768px) {
+  dl dt {
+    float: left;
+    width: 100px;
+    overflow: hidden;
+    clear: left;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  dl dd {
+    margin-left: 120px;
+  }
+}
+
+dl dd:before,
+dl dd:after {
+  display: table;
+  content: " ";
+}
+
+dl dd:after {
+  clear:both;
+}

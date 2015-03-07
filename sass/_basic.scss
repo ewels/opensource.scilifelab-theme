@@ -4,3 +4,21 @@
 *:after {
   @include box-sizing(border-box);
 }
+
+html,
+body {
+  height: 100%;
+
+  // Render fonts thinner
+  -webkit-font-smoothing: antialiased;
+
+  background-color: $bg-color;
+
+  @media screen and (min-width: 500px) {
+    font-size: 105%;
+  }
+}
+
+.text-center {
+  text-align: center;
+}

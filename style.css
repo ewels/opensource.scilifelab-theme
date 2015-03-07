@@ -480,6 +480,19 @@ pre {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+html,
+body {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  background-color: #f7f7f7; }
+  @media screen and (min-width: 500px) {
+    html,
+    body {
+      font-size: 105%; } }
+
+.text-center {
+  text-align: center; }
+
 body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
   color: #3e4853; }
@@ -515,6 +528,35 @@ pre {
   @media screen and (min-width: 600px) {
     pre {
       border: 1px solid #cfd9db; } }
+
+dl, dd {
+  margin: 0 0 20px; }
+
+dt, dd {
+  margin: 0; }
+
+dd {
+  padding-bottom: 6px; }
+
+@media (min-width: 768px) {
+  dl dt {
+    float: left;
+    width: 100px;
+    overflow: hidden;
+    clear: left;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+
+  dl dd {
+    margin-left: 120px; } }
+dl dd:before,
+dl dd:after {
+  display: table;
+  content: " "; }
+
+dl dd:after {
+  clear: both; }
 
 .badge {
   background: #f04033;
@@ -628,6 +670,10 @@ pre {
   border-radius: 48px;
   background-color: rgba(0, 0, 0, 0.1);
   background-size: 48px; }
+  .showcase-item-icon > .is-icon {
+    font-size: 20px;
+    line-height: 0;
+    color: #fff; }
 
 .showcase-item-text-title {
   font-size: 1.2em;
@@ -805,52 +851,5 @@ pre {
 
 .project-title {
   color: #2980b9; }
-
-html,
-body {
-  height: 100%;
-  -webkit-font-smoothing: antialiased;
-  background-color: #f7f7f7; }
-  @media screen and (min-width: 500px) {
-    html,
-    body {
-      font-size: 105%; } }
-
-.text-center {
-  text-align: center; }
-
-dl, dd {
-  margin: 0 0 20px; }
-
-dt, dd {
-  margin: 0; }
-
-dd {
-  padding-bottom: 6px; }
-
-@media (min-width: 768px) {
-  dl dt {
-    float: left;
-    width: 100px;
-    overflow: hidden;
-    clear: left;
-    text-align: right;
-    text-overflow: ellipsis;
-    white-space: nowrap; }
-
-  dl dd {
-    margin-left: 120px; } }
-dl dd:before,
-dl dd:after {
-  display: table;
-  content: " "; }
-
-dl dd:after {
-  clear: both; }
-
-.case-logo-icon {
-  font-size: 20px;
-  line-height: 0;
-  color: #fff; }
 
 /*# sourceMappingURL=style.css.map */

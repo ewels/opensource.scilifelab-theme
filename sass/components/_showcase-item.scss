@@ -44,6 +44,12 @@
   border-radius: $size;
   background-color: rgba(#000, .1); // default background colour = gray
   background-size: $size;
+
+  > .is-icon {
+    font-size: 20px;
+    line-height: 0;
+    color: #fff;
+  }
 }
 
 .showcase-item-text-title {

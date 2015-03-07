@@ -38,9 +38,9 @@
                 <a class="showcase-item" href="<?php the_permalink(); ?>">
                     <div class="showcase-item-icon" style="background:<?php echo $data['wpcf-background-colour']; ?>">
                         <?php if(isset($data['wpcf-project-logo'])) { ?>
-                            <img class="case-logo-img" src="<?php echo $data['wpcf-project-logo']; ?>" width="48" height="48" alt="<?php the_title(); ?>">
+                            <img class="is-image" src="<?php echo $data['wpcf-project-logo']; ?>" width="48" height="48" alt="<?php the_title(); ?>">
                         <?php } else if(isset($data['wpcf-project-symbol'])) { ?>
-                            <div class="case-logo-icon <?php echo $data['wpcf-project-symbol']; ?>"></div>
+                            <div class="is-icon <?php echo $data['wpcf-project-symbol']; ?>"></div>
                         <?php } ?>
                     </div>
                     <div class="showcase-item-text">
