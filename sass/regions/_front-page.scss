@@ -1,0 +1,14 @@
+// +--------------------------------------------------------------------
+// HOME PAGE STRUCTURE & TYPOGRAPY
+// +--------------------------------------------------------------------
+.home {
+  height: initial;
+  min-height: 100%;
+  background-color: $homepage-bg-color;
+  background-image: url(img/grid17.png);
+}
+
+.home-nav {
+  margin-top: 2em;
+  text-align: center;
+}

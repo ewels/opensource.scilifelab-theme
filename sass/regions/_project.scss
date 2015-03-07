@@ -1,0 +1,75 @@
+// +--------------------------------------------------------------------
+// GENERAL PAGE STRUCTURE & TYPOGRAPY
+// +--------------------------------------------------------------------
+.post {
+    background-color: #fff;
+}
+.project-body {
+  padding: 0 0 2em;
+
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+
+  @media screen and (min-width: 500px) {
+    width: 80%;
+    padding-top: 2em;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .highlight {
+    width: 650px;
+    @media screen and (min-width: 700px) {
+        margin-left: -50px;
+    }
+  }
+
+  h1.project-h1 {
+    width: 750px;
+    @media screen and (min-width: 800px) {
+        margin-left: -100px;
+    }
+  }
+
+  ul {
+    padding-left: 2em;
+
+    li {
+      margin: .8em 0;
+    }
+  }
+}
+
+
+$max-poster-height: 800px;
+.project-poster-wrapper {
+  height: 80%;
+  max-height: $max-poster-height;
+}
+
+.project-poster {
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+
+  // Avoid blur due to vertically centered child element
+  @include transform-style(preserve-3d);
+
+  > img {
+    @extend %vertical-align;
+    height: auto;
+    width: auto;
+    max-width: 80%;
+    max-height: 350px;
+    margin: 0 auto;
+    display: table;
+  }
+}
+
+.project-title {
+  color: #2980b9;
+}

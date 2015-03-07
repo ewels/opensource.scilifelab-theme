@@ -28,10 +28,13 @@ Version: 1.0
 @import 'components/button';
 @import 'components/showcase';
 @import 'components/showcase-item';
+@import 'components/showcase-aside';
 
 // Regions
 @import 'regions/header';
 @import 'regions/footer';
+@import 'regions/front-page';
+@import 'regions/project';
 
 // +--------------------------------------------------------------------
 // BASE STYLES & TYPOGRAPY - ALL PAGES
@@ -92,158 +95,8 @@ dl dd:after {
   clear:both;
 }
 
-// +--------------------------------------------------------------------
-// HOME PAGE STRUCTURE & TYPOGRAPY
-// +--------------------------------------------------------------------
-.home {
-  height: initial;
-  min-height: 100%;
-  background-color: $homepage-bg-color;
-  background-image: url(img/grid17.png);
-}
-
-.home-nav {
-  margin-top: 2em;
-  text-align: center;
-}
-
-.case-action-wrapper {
-  display: none;
-  text-decoration: none;
-  position: relative;
-
-  @media screen and (min-width: 400px) {
-    @include display(flex);
-    @include flex-basis(8em);
-    @include align-items(center);
-    @include justify-content(center);
-    @include box-sizing(content-box);
-  }
-
-  &:before {
-    // tooltip
-    content: attr(alt);
-    position: absolute;
-    display: block;
-    border-radius: 3px;
-    top: -10px;
-    right: 5px;
-    font-size: .8em;
-    white-space: nowrap;
-    padding: 3px 5px;
-    background-color: #525f6b;
-    color: #fff;
-    z-index: 10000;
-    opacity: 0;
-  }
-
-  &:hover:before {
-    // show tooltip on hover
-    opacity: 1;
-  }
-}
-
-.case-action {
-  @include display(flex);
-  @include align-items(center);
-  @include justify-content(space-around);
-  border: 1px solid darken($border-color, 10%);
-  box-shadow: 0 1px 3px -1px darken($border-color, 5%);
-  font-size: .8em;
-  font-weight: bold;
-  padding: 3px 5px;
-  border-radius: 3px;
-  color: #2b84d3;
-
-  &:hover {
-    background: lighten($border-color, 4%);
-  }
-
-  &:active {
-    background: lighten($border-color, 2%);
-    box-shadow: 0 0 0 0 darken($border-color, 5%);
-  }
-}
-
 .case-logo-icon {
   font-size: 20px;
   line-height: 0;
   color: #fff;
-}
-
-
-// +--------------------------------------------------------------------
-// GENERAL PAGE STRUCTURE & TYPOGRAPY
-// +--------------------------------------------------------------------
-.post {
-    background-color: #fff;
-}
-.project-body {
-  padding: 0 0 2em;
-
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-
-  @media screen and (min-width: 500px) {
-    width: 80%;
-    padding-top: 2em;
-    max-width: 550px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .highlight {
-    width: 650px;
-    @media screen and (min-width: 700px) {
-        margin-left: -50px;
-    }
-  }
-
-  h1.project-h1 {
-    width: 750px;
-    @media screen and (min-width: 800px) {
-        margin-left: -100px;
-    }
-  }
-
-  ul {
-    padding-left: 2em;
-
-    li {
-      margin: .8em 0;
-    }
-  }
-}
-
-
-$max-poster-height: 800px;
-.project-poster-wrapper {
-  height: 80%;
-  max-height: $max-poster-height;
-}
-
-.project-poster {
-  background-size: cover;
-  background-position: center;
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
-
-  // Avoid blur due to vertically centered child element
-  @include transform-style(preserve-3d);
-
-  > img {
-    @extend %vertical-align;
-    height: auto;
-    width: auto;
-    max-width: 80%;
-    max-height: 350px;
-    margin: 0 auto;
-    display: table;
-  }
-}
-
-.project-title {
-  color: #2980b9;
 }

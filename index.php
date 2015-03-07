@@ -33,8 +33,8 @@
                     }
                     ?>
                     <div class="case-wrapper">
-                        <a href="<?php echo $data['wpcf-github-url']; ?>" alt="See the <?php the_title(); ?> code" class="case-action-wrapper">
-                            <div id="gh-stars-<?php echo get_the_id(); ?>" class="case-action">
+                        <a href="<?php echo $data['wpcf-github-url']; ?>" alt="See the <?php the_title(); ?> code" class="showcase-aside">
+                            <div id="gh-stars-<?php echo get_the_id(); ?>" class="showcase-aside-action">
                                 <div class="icon-star"></div>
                             </div>
                         </a>

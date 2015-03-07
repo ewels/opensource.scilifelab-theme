@@ -1,0 +1,58 @@
+// For showing star count in Showcase component
+.showcase-aside {
+  display: none;
+  text-decoration: none;
+  position: relative;
+
+  @media screen and (min-width: 400px) {
+    @include display(flex);
+    @include flex-basis(8em);
+    @include align-items(center);
+    @include justify-content(center);
+    @include box-sizing(content-box);
+  }
+
+  &:before {
+    // tooltip
+    content: attr(alt);
+    position: absolute;
+    display: block;
+    border-radius: 3px;
+    top: -10px;
+    right: 5px;
+    font-size: .8em;
+    white-space: nowrap;
+    padding: 3px 5px;
+    background-color: #525f6b;
+    color: #fff;
+    z-index: 10000;
+    opacity: 0;
+  }
+
+  &:hover:before {
+    // show tooltip on hover
+    opacity: 1;
+  }
+}
+
+.showcase-aside-action {
+  @include display(flex);
+  @include align-items(center);
+  @include justify-content(space-around);
+  border: 1px solid darken($border-color, 10%);
+  box-shadow: 0 1px 3px -1px darken($border-color, 5%);
+  font-size: .8em;
+  font-weight: bold;
+  padding: 3px 5px;
+  border-radius: 3px;
+  color: #2b84d3;
+
+  &:hover {
+    background: lighten($border-color, 4%);
+  }
+
+  &:active {
+    background: lighten($border-color, 2%);
+    box-shadow: 0 0 0 0 darken($border-color, 5%);
+  }
+}
