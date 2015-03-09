@@ -27,14 +27,14 @@
             $ghid = 'data-ghid="'.$gh_raw[1].'"';
         }
         echo '<div id="author_'.$user->data->user_login.'" class="showcase-wrapper no-avatar" '.$ghid.'>';
-            echo '<div class="showcase-item">';
+            echo '<a class="showcase-item" href="'.get_author_posts_url($user->ID).'">';
                 echo '<div class="showcase-item-icon"></div>';
                 echo '<div class="showcase-item-text">';
-                    echo '<a class="showcase-item-text-title" href="'.get_author_posts_url($user->ID).'">';
+                    echo '<div class="showcase-item-text-title">';
                         echo $user->data->display_name;
-                    echo '</a>';
+                    echo '</div>';
                 echo '</div>';
-            echo '</div>';
+            echo '</a>';
         echo '</div>';
     }
     echo '</div>';
