@@ -26,19 +26,19 @@
         if(isset($gh_raw[1])){
             $ghid = 'data-ghid="'.$gh_raw[1].'"';
         }
-        echo '<div id="author_'.$user->data->user_login.'" class="showcase-wrapper no-avatar" '.$ghid.'>';
-            echo '<div class="showcase-item">';
-                echo '<div class="showcase-item-icon"></div>';
-                echo '<div class="showcase-item-text">';
-                    echo '<a class="showcase-item-text-title" href="'.get_author_posts_url($user->ID).'">';
-                        echo $user->data->display_name;
-                    echo '</a>';
-                echo '</div>';
-            echo '</div>';
-        echo '</div>';
-    }
-    echo '</div>';
-    ?>
+        ?>
+        <div id="author_<?php echo $user->data->user_login; ?>" class="showcase-wrapper no-avatar" <?php echo $ghid; ?>>
+            <a class="showcase-item" href="<?php echo get_author_posts_url($user->ID); ?>">
+                <div class="showcase-item-icon"></div>
+                <div class="showcase-item-text">
+                    <div class="showcase-item-text-title">
+                        <?php echo $user->data->display_name; ?>
+                    </div>
+                </div>
+            </a>
+        </div>
+    <?php } ?>
+    </div>
 
     <h1>Other SciLifeLab Developers</h1>
     <div id="github-users" class="showcase"></div>
@@ -74,12 +74,12 @@ jQuery(function($) {
         });
 
     })
-        .fail(function() {
-            $('#github-users').html('<p class="error-message">Oops, couldn\'t communicate with the GitHub API.</p>');
-        })
-        .always(function() {
-            console.log( "complete" );
-        });
+    .fail(function() {
+        $('#github-users').html('<p class="error-message">Oops, couldn\'t communicate with the GitHub API.</p>');
+    })
+    // .always(function() {
+    //     console.log( "complete" );
+    // });
 });
 </script>
 
