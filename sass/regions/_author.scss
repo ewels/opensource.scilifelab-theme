@@ -1,0 +1,12 @@
+.author-header {
+  @extend .showcase-item-icon;
+
+  background-color: $font-color;
+  margin-bottom: 2rem;
+}
+
+.author-header-title {
+  font-size: 1.5rem;
+
+  color: #fff;
+}
