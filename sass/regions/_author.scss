@@ -10,3 +10,24 @@
 
   color: #fff;
 }
+
+.author_avatar {
+    float:right;
+
+    $size: 96px;
+    min-width: $size;
+    min-height: $size;
+    border-radius: $size;
+    background-color: rgba(#000, .1); // default background colour = gray
+    background-size: $size;
+    background-repeat: no-repeat;
+}
+
+.author_shortbio {
+    margin-right:100px;
+    clear:left;
+    overflow:auto;
+}
+.author_shortbio dl {
+    margin-bottom:0;
+}
