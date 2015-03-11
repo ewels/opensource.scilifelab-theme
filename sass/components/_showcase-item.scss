@@ -44,6 +44,7 @@
   border-radius: $size;
   background-color: rgba(#000, .1); // default background colour = gray
   background-size: $size;
+  background-repeat: no-repeat;
 
   > .is-icon {
     font-size: 20px;
