@@ -15,6 +15,7 @@
   color: #fff;
   border-radius: 100%;
   background-color: #7DC030;
+  cursor: default;
 
   padding: .5rem;
   margin-right: 1rem;
@@ -49,6 +50,11 @@
   background-image: url('img/languages/html5.svg');
 }
 
+.css {
+  @extend %prog-icon-common;
+  background-image: url('img/languages/css3.svg');
+}
+
 .javascript {
   @extend %prog-icon-common;
   background-image: url('img/languages/javascript.svg');
@@ -59,6 +65,11 @@
   background-image: url('img/languages/sass.svg');
 }
 
+.less {
+  @extend %prog-icon-common;
+  background-image: url('img/languages/less.svg');
+}
+
 .node-js {
   @extend %prog-icon-common;
   background-image: url('img/languages/node-js.svg');
@@ -67,4 +78,14 @@
 .perl {
   @extend %prog-icon-common;
   background-image: url('img/languages/perl.png');
+}
+
+.php {
+  @extend %prog-icon-common;
+  background-image: url('img/languages/php.svg');
+}
+
+.r {
+  @extend %prog-icon-common;
+  background-image: url('img/languages/r.png');
 }

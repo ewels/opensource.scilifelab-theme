@@ -32,7 +32,7 @@ if (have_posts()) {
 				echo wpautop(apply_filters( 'the_content', get_the_content()));
 
 				echo '<h2 id="contributors">Contributors</h2>';
-			  echo '<div id="contributors_list" class="showcase">';
+			    echo '<div id="contributors_list" class="showcase">';
 				foreach(get_coauthors() as $author){
 					$aid = get_the_author_meta( 'ID' );
 			        $ghid = '';
@@ -40,10 +40,18 @@ if (have_posts()) {
 			        if(isset($gh_raw[1])){
 			            $ghid = 'data-ghid="'.$gh_raw[1].'"';
 			        }
-			        echo '<div id="author_'.get_the_author_meta( 'user_login' ).'" class="showcase-wrapper no-avatar" '.$ghid.'>';
-			        echo '<div class="showcase-item"><div class="showcase-item-icon"></div>';
-			        echo '<div class="showcase-item-text"><a class="showcase-item-text-title" href="'.get_author_posts_url($aid).'">'.get_the_author_meta( 'display_name' ).'</a></div></div>';
-			        echo '</div>';
+					?>
+					<div id="author_<?php the_author_meta( 'user_login' ); ?>" class="showcase-wrapper no-avatar" <?php echo $ghid; ?>>
+			            <a class="showcase-item" href="<?php echo get_author_posts_url($aid); ?>">
+			                <div class="showcase-item-icon"></div>
+			                <div class="showcase-item-text">
+			                    <div class="showcase-item-text-title">
+			                        <?php the_author_meta( 'display_name' ); ?>
+			                    </div>
+			                </div>
+			            </a>
+			        </div>
+					<?php
 				}
 				echo '</div>';
 				echo wpautop($data['wpcf-contributors-custom']);
