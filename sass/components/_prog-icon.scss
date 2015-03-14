@@ -97,3 +97,8 @@ $prog-icon-size: 48px;
   @extend %prog-icon-common;
   background-image: url('img/languages/ruby.svg');
 }
+
+.scala {
+  @extend %prog-icon-common;
+  background-image: url('img/languages/scala.svg');
+}
